@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://https://hongjiangwu.github.io/jichuang-website/sitemap.xml
+Sitemap: https://hongjiangwu.github.io/jichuang-website/sitemap.xml

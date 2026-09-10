@@ -252,3 +252,10 @@ tbody tr:hover { background: #f7fafc; }
 /* ===== 页脚商标 ===== */
 .footer-brand { display: inline-flex; align-items: center; gap: 8px; }
 .footer-logo { width: 26px; height: 26px; border-radius: 6px; }
+
+/* ===== 联系我们：官方商标标识 ===== */
+.official-logo { height: 56px; width: auto; margin-bottom: 14px; display: block; }
+
+/* ===== 商标图片（使用照片原图） ===== */
+img.brand-mark { background: none; border-radius: 10px; object-fit: contain; }
+.footer-logo { width: auto; height: 28px; }

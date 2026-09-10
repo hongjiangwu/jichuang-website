@@ -248,3 +248,7 @@ tbody tr:hover { background: #f7fafc; }
   .hero { padding-top: 128px; }
   .section { padding: 64px 0; }
 }
+
+/* ===== 页脚商标 ===== */
+.footer-brand { display: inline-flex; align-items: center; gap: 8px; }
+.footer-logo { width: 26px; height: 26px; border-radius: 6px; }

@@ -56,3 +56,59 @@ const spy = new IntersectionObserver((entries) => {
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
 sections.forEach((sec) => spy.observe(sec));
+
+// ===== 滚动体验：进度条 / 回到顶部 / 首屏视差 =====
+// 说明：使用 requestAnimationFrame 节流 + passive 监听，避免滚动掉帧
+(function () {
+  const progressEl = document.getElementById('scrollProgress');
+  const toTopEl = document.getElementById('toTop');
+  const heroCopyEl = document.querySelector('.hero-copy');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let pending = false;
+
+  function updateScrollUI() {
+    const y = window.scrollY || window.pageYOffset || 0;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+
+    // 顶部进度条
+    if (progressEl) {
+      progressEl.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+    }
+    // 回到顶部按钮显隐
+    if (toTopEl) {
+      toTopEl.classList.toggle('show', y > 560);
+    }
+    // 首屏文案轻微视差（仅桌面 & 未开启减弱动效时）
+    if (heroCopyEl && !reduceMotion && window.innerWidth > 900) {
+      heroCopyEl.style.opacity = String(Math.max(0, 1 - y / 640));
+      heroCopyEl.style.transform = 'translate3d(0,' + Math.min(y * 0.03, 18).toFixed(1) + 'px,0)';
+    }
+    pending = false;
+  }
+
+  function requestUpdate() {
+    if (!pending) {
+      pending = true;
+      requestAnimationFrame(updateScrollUI);
+    }
+  }
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate, { passive: true });
+
+  // 回到顶部（平滑滚动）
+  if (toTopEl) {
+    toTopEl.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
+
+  // 卡片交错进场：给同级元素设置递增延迟
+  document.querySelectorAll('.product-grid, .app-grid, .about-points').forEach(function (group) {
+    Array.prototype.forEach.call(group.children, function (el, i) {
+      el.style.setProperty('--d', String(i));
+    });
+  });
+
+  updateScrollUI();
+})();

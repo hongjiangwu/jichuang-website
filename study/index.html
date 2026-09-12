@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111c33" />
+  <meta name="description" content="记录课程、英语、阅读与项目成就的个人学习打卡站。" />
+  <title>拾光 · 学习手账</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111c33'/%3E%3Cpath d='M19 17h21a5 5 0 0 1 5 5v25H23a4 4 0 0 1-4-4V17Z' fill='%23f4c95d'/%3E%3Cpath d='M25 17v30M31 26h9M31 33h9' stroke='%23111c33' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <style>
+    :root{--navy:#111c33;--ink:#18233a;--muted:#6d7687;--paper:#f4f6fb;--white:#fff;--yellow:#f4c95d;--yellow-2:#fff5d5;--blue:#5776e9;--blue-2:#eef1ff;--pink:#e46f8f;--pink-2:#fff0f4;--green:#35a47a;--line:#e4e8f1;--shadow:0 20px 50px rgba(20,31,55,.09);--radius:24px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:16px;line-height:1.5}button,input,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:248px 1fr}.sidebar{background:var(--navy);color:#fff;padding:34px 24px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:800;letter-spacing:.02em}.brand-mark{width:38px;height:38px;background:var(--yellow);color:var(--navy);display:grid;place-items:center;border-radius:12px;font-size:20px;transform:rotate(-3deg)}.nav{margin-top:52px;display:grid;gap:9px}.nav a{color:#aeb8cc;text-decoration:none;padding:12px 14px;border-radius:13px;display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600}.nav a.active,.nav a:hover{background:#fff;color:var(--navy)}.nav-icon{width:22px;text-align:center}.sidebar-note{margin-top:auto;background:#1c2946;padding:17px;border-radius:18px;color:#cbd3e1;font-size:13px}.sidebar-note strong{color:#fff;display:block;font-size:15px;margin-bottom:5px}.mini-progress{height:6px;background:#33405b;border-radius:20px;overflow:hidden;margin-top:12px}.mini-progress i{display:block;width:72%;height:100%;background:var(--yellow);border-radius:inherit}.main{padding:34px 42px 56px;max-width:1500px;width:100%;margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}.greeting small{display:block;color:var(--muted);font-weight:600;margin-bottom:4px}.greeting h1{font-size:31px;line-height:1.2;margin:0;letter-spacing:-.04em}.date-chip{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);padding:10px 15px;border-radius:15px;color:var(--muted);font-weight:600}.grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(320px,.8fr);gap:24px}.panel{background:var(--white);border:1px solid rgba(218,223,234,.9);border-radius:var(--radius);box-shadow:var(--shadow)}.checkin{padding:28px}.panel-head{display:flex;justify-content:space-between;align-items:start;margin-bottom:23px}.eyebrow{color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}.panel h2{font-size:23px;letter-spacing:-.025em;margin:4px 0 0}.record-count{background:var(--blue-2);color:var(--blue);font-weight:800;font-size:13px;border-radius:99px;padding:8px 11px}.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{background:#f8f9fc;border:1px solid var(--line);border-radius:17px;padding:15px 16px;transition:.2s}.field:focus-within{background:#fff;border-color:var(--blue);box-shadow:0 0 0 4px rgba(87,118,233,.1)}.field.wide{grid-column:1/-1}.field label{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;font-weight:700;margin-bottom:7px}.field input,.field textarea{border:0;outline:0;background:transparent;width:100%;color:var(--ink);font-size:16px;font-weight:650;resize:none}.field textarea{height:54px}.field input::placeholder,.field textarea::placeholder{color:#adb4c2;font-weight:500}.quick-row{display:flex;gap:8px;margin-top:9px;flex-wrap:wrap}.quick{border:0;background:var(--blue-2);color:var(--blue);border-radius:20px;padding:6px 10px;font-size:12px;font-weight:750}.submit{border:0;width:100%;background:var(--navy);color:#fff;border-radius:16px;padding:15px 20px;margin-top:18px;font-weight:800;box-shadow:0 9px 20px rgba(17,28,51,.18);transition:.2s}.submit:hover{transform:translateY(-2px);background:#1d2d50}.submit:active{transform:translateY(0)}.side-stack{display:grid;gap:24px}.streak{padding:26px;overflow:hidden;position:relative;background:var(--navy);color:#fff}.streak:after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;background:rgba(244,201,93,.11);right:-55px;top:-60px}.streak-top{display:flex;justify-content:space-between;align-items:center}.flame{font-size:38px}.streak .big{font-size:48px;font-weight:850;line-height:1;margin:15px 0 4px;letter-spacing:-.06em}.streak p{color:#abb5c9;margin:0}.week{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-top:24px}.day{text-align:center;color:#8591a9;font-size:11px}.day i{width:28px;height:28px;display:grid;place-items:center;margin:7px auto 0;background:#293650;border-radius:9px;color:#8894aa;font-style:normal;font-size:13px}.day.done i{background:var(--yellow);color:var(--navy);font-weight:900}.quote{padding:22px 24px;background:var(--yellow-2);border-color:#f6df9a;box-shadow:none}.quote p{margin:0;font-family:Georgia,"Songti SC",serif;font-size:17px;color:#594818}.quote small{display:block;color:#8b763b;margin-top:10px}.stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.stat{padding:21px 23px;display:flex;align-items:center;gap:16px}.stat-icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:23px}.stat:nth-child(1) .stat-icon{background:var(--blue-2)}.stat:nth-child(2) .stat-icon{background:var(--pink-2)}.stat:nth-child(3) .stat-icon{background:#e9f7f1}.stat b{display:block;font-size:25px;line-height:1.15}.stat span{color:var(--muted);font-size:13px}.history{grid-column:1/-1;padding:27px}.history-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.ghost{border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 12px;color:var(--muted);font-size:13px;font-weight:700}.timeline{display:grid;gap:0}.entry{display:grid;grid-template-columns:80px 22px 1fr;gap:13px;min-height:85px}.entry-date{color:var(--muted);font-size:13px;text-align:right;padding-top:2px}.entry-date b{display:block;color:var(--ink);font-size:15px}.track{position:relative}.track:after{content:"";position:absolute;top:18px;bottom:-3px;left:10px;width:2px;background:var(--line)}.entry:last-child .track:after{display:none}.dot{width:22px;height:22px;border:6px solid var(--blue-2);background:var(--blue);border-radius:50%;position:relative;z-index:1}.entry-body{padding-bottom:22px;border-bottom:1px dashed var(--line)}.entry:last-child .entry-body{border:0}.entry-title{font-weight:800;margin-bottom:8px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700}.tag.course{background:var(--blue-2);color:var(--blue)}.tag.english{background:var(--pink-2);color:var(--pink)}.tag.book{background:#e9f7f1;color:var(--green)}.notes{font-size:13px;color:var(--muted);margin-top:9px}.empty{text-align:center;padding:30px;color:var(--muted)}.toast{position:fixed;right:28px;bottom:28px;background:var(--navy);color:#fff;padding:14px 18px;border-radius:14px;box-shadow:var(--shadow);transform:translateY(90px);opacity:0;transition:.35s;z-index:20;font-weight:700}.toast.show{transform:none;opacity:1}.mobile-brand{display:none}
+    @media(max-width:900px){.app{display:block}.sidebar{display:none}.main{padding:25px 18px 46px}.mobile-brand{display:flex;margin-bottom:24px}.topbar{align-items:flex-end}.greeting h1{font-size:27px}.date-chip{font-size:13px;padding:8px 10px}.grid{grid-template-columns:1fr}.stats{grid-column:auto;grid-template-columns:1fr 1fr}.history{grid-column:auto}.stat:last-child{grid-column:1/-1}}@media(max-width:580px){.main{padding:20px 13px 40px}.topbar{align-items:start}.date-chip{display:none}.panel{border-radius:20px}.checkin,.history{padding:21px}.input-grid{grid-template-columns:1fr}.field.wide{grid-column:auto}.stats{grid-template-columns:1fr}.stat:last-child{grid-column:auto}.entry{grid-template-columns:57px 18px 1fr;gap:9px}.entry-date{font-size:11px}.entry-date b{font-size:13px}.dot{width:18px;height:18px;border-width:5px}.track:after{left:8px}.greeting h1{font-size:25px}}
+  </style>
+  <style>
+    .section-copy{margin:5px 0 0;color:var(--muted);font-size:13px}
+    .daily-board{grid-column:1/-1;padding:27px}
+    .daily-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+    .daily-card{min-height:150px;padding:14px 12px;border:1px solid var(--line);border-radius:16px;background:#fafbfe;display:flex;flex-direction:column;gap:8px}
+    .daily-card.today{border-color:var(--blue);box-shadow:0 0 0 3px rgba(87,118,233,.1)}
+    .daily-date{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;font-weight:750}
+    .daily-date b{color:var(--ink);font-size:15px}
+    .daily-status{font-size:12px;font-weight:800;color:var(--pink);display:flex;align-items:center;gap:5px}
+    .daily-status.checked{color:var(--green)}
+    .daily-status.inactive{color:#aeb5c3}
+    .daily-status i{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+    .daily-content{margin:0;color:var(--ink);font-size:12px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+    .tag.project{background:var(--yellow-2);color:#8b6a15}
+    .daily-empty{margin-top:auto;color:#aeb5c3;font-size:12px}
+    .review{grid-column:1/-1;padding:27px}
+    .review-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px}
+    .start-date-control{display:flex;align-items:center;gap:9px;margin-left:auto;color:var(--muted);font-size:12px;font-weight:800;white-space:nowrap}
+    .start-date-control input{border:1px solid var(--line);background:#f8f9fc;border-radius:10px;padding:8px 9px;color:var(--ink);font-size:13px;font-weight:700}
+    .start-date-control input:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(87,118,233,.1)}
+    .start-date-hint{display:block;color:#aeb5c3;font-size:11px;font-weight:500;margin-top:4px}
+    .period-tabs{display:flex;gap:5px;padding:4px;background:#f0f2f8;border-radius:12px}
+    .period-tab{border:0;background:transparent;color:var(--muted);padding:8px 13px;border-radius:9px;font-size:13px;font-weight:800}
+    .period-tab.active{background:#fff;color:var(--navy);box-shadow:0 2px 8px rgba(20,31,55,.08)}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:15px}
+    .summary-table{width:100%;min-width:720px;border-collapse:collapse;font-size:13px}
+    .summary-table th,.summary-table td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+    .summary-table th{background:#f8f9fc;color:var(--muted);font-size:12px;font-weight:800}
+    .summary-table tr:last-child td{border-bottom:0}
+    .summary-table td strong{font-size:14px;color:var(--ink)}
+    .summary-table .good{color:var(--green);font-weight:800}
+    .summary-table .missed{color:var(--pink);font-weight:800}
+    .summary-foot{margin:12px 2px 0;color:var(--muted);font-size:12px}
+    @media(max-width:900px){.daily-board,.review{grid-column:auto}.daily-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    @media(max-width:580px){.daily-board,.review{padding:21px}.daily-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.daily-card{min-height:132px}.review-head{display:block}.start-date-control{margin:15px 0 0;justify-content:space-between}.period-tabs{margin-top:15px;width:max-content}.period-tab{padding:8px 11px}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">✓</span>拾光学习</div>
+      <nav class="nav" aria-label="主导航"><a class="active" href="#today"><span class="nav-icon">⌂</span>今日打卡</a><a href="#stats"><span class="nav-icon">◫</span>学习统计</a><a href="#daily"><span class="nav-icon">▦</span>每日状态</a><a href="#review"><span class="nav-icon">◷</span>复盘汇总</a></nav>
+      <div class="sidebar-note"><strong>本周目标</strong>坚持学习 5 天，已经完成 <span id="sideDays">4</span> 天<div class="mini-progress"><i id="sideProgress"></i></div></div>
+    </aside>
+    <main class="main">
+      <div class="mobile-brand brand"><span class="brand-mark">✓</span>拾光学习</div>
+      <header class="topbar"><div class="greeting"><small id="weekday">今天，星期六</small><h1>今天也向前一点点 👋</h1></div><div class="date-chip"><span>◷</span><span id="fullDate">2026 年 9 月 12 日</span></div></header>
+      <div class="grid" id="today">
+        <section class="panel checkin" aria-labelledby="checkinTitle">
+          <div class="panel-head"><div><span class="eyebrow">Today’s log</span><h2 id="checkinTitle">记录今天的学习</h2></div><span class="record-count" id="todayStatus">待打卡</span></div>
+          <form id="checkinForm">
+            <div class="input-grid">
+              <div class="field"><label for="course">📘 课程进度</label><input id="course" name="course" placeholder="如：数据结构第 4 章" /></div>
+              <div class="field"><label for="english">🎧 英语练习</label><input id="english" name="english" placeholder="如：听力 45 分钟" /><div class="quick"><button type="button" class="quick" data-min="20">20 分钟</button> <button type="button" class="quick" data-min="45">45 分钟</button></div></div>
+              <div class="field wide"><label for="project">🏆 项目成就</label><input id="project" name="project" placeholder="如：完成个人学习打卡网站发布" /></div>
+              <div class="field wide"><label for="book">📖 阅读记录</label><input id="book" name="book" placeholder="如：《人类简史》第 56–78 页" /></div>
+              <div class="field wide"><label for="note">✦ 今日收获</label><textarea id="note" name="note" placeholder="写下一句理解、一个问题，或值得记住的瞬间…"></textarea></div>
+            </div>
+            <button class="submit" type="submit">完成今日打卡 &nbsp;→</button>
+          </form>
+        </section>
+        <div class="side-stack">
+          <section class="panel streak"><div class="streak-top"><span class="eyebrow" style="color:#f4c95d">连续学习</span><span class="flame">🔥</span></div><div class="big"><span id="streakNum">7</span><small style="font-size:18px;letter-spacing:0"> 天</small></div><p>保持节奏，比追赶速度更重要</p><div class="week" id="weekRow"></div></section>
+          <aside class="panel quote"><p>“每天比昨天多懂一点，时间会把微小的进步变成答案。”</p><small>— 今日学习签</small></aside>
+        </div>
+        <section class="stats" id="stats" aria-label="本周学习统计">
+          <article class="panel stat"><span class="stat-icon">📚</span><div><b id="courseCount">4</b><span>本周课程章节</span></div></article>
+          <article class="panel stat"><span class="stat-icon">🎧</span><div><b id="englishMins">185 <small>分钟</small></b><span>本周英语练习</span></div></article>
+          <article class="panel stat"><span class="stat-icon">📖</span><div><b id="bookCount">2</b><span>本周读过的书</span></div></article>
+        </section>
+        <section class="panel daily-board" id="daily" aria-labelledby="dailyTitle"><div class="panel-head"><div><span class="eyebrow">Daily status</span><h2 id="dailyTitle">每日打卡状态</h2><p class="section-copy">已打卡的日期显示具体内容，空白日期明确标记为未打卡。</p></div><span class="record-count" id="dailyRange">本周 7 天</span></div><div class="daily-grid" id="dailyGrid"></div></section>
+        <section class="panel history" id="history" aria-labelledby="historyTitle"><div class="history-head"><div><span class="eyebrow">Recent</span><h2 id="historyTitle">最近打卡</h2></div><button class="ghost" type="button" id="clearBtn">清除我的记录</button></div><div class="timeline" id="timeline"></div></section>
+        <section class="panel review" id="review" aria-labelledby="reviewTitle"><div class="review-head"><div><span class="eyebrow">Review</span><h2 id="reviewTitle">学习复盘汇总</h2><p class="section-copy">按周、月、年查看完成情况，复盘自己的节奏。</p></div><div><label class="start-date-control" for="startDate">统计起始日 <input id="startDate" type="date" aria-describedby="startDateHint" /></label><small class="start-date-hint" id="startDateHint">只统计这一天及之后的记录</small></div><div class="period-tabs" role="tablist" aria-label="汇总周期"><button class="period-tab active" type="button" data-period="week" role="tab" aria-selected="true">周</button><button class="period-tab" type="button" data-period="month" role="tab" aria-selected="false">月</button><button class="period-tab" type="button" data-period="year" role="tab" aria-selected="false">年</button></div></div><div class="table-wrap"><table class="summary-table"><thead><tr><th>复盘周期</th><th>已打卡</th><th>未打卡</th><th>课程章节</th><th>英语练习</th><th>阅读记录</th><th>项目成就</th></tr></thead><tbody id="summaryBody"></tbody></table></div><p class="summary-foot" id="summaryFoot"></p></section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite">打卡成功，今天也很棒！</div>
+  <script>
+    const KEY='shiguang-study-records-v1';
+    const RESET_KEY='shiguang-study-records-reset-2026-09-12';
+    const didReset=!localStorage.getItem(RESET_KEY);
+    if(didReset){
+      localStorage.removeItem(KEY);
+      localStorage.setItem(RESET_KEY,'done');
+    }
+    let records=JSON.parse(localStorage.getItem(KEY)||'[]');
+    const today=()=>new Date().toLocaleDateString('en-CA');
+    const START_KEY='shiguang-study-start-date-v1';
+    let startDate=localStorage.getItem(START_KEY)||records.map(r=>r.date).filter(Boolean).sort()[0]||today();
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(startDate))startDate=today();
+    localStorage.setItem(START_KEY,startDate);
+    if(didReset){
+      records=[{id:'project-achievement-today',date:today(),course:'',project:'完成个人学习打卡网站搭建与发布',english:'',book:'',note:'把学习进展、英语练习、阅读记录和项目成就放到同一个打卡页面里。'}];
+      persist();
+    }
+    const fmt=d=>{const x=new Date(d+'T12:00:00');return {md:`${x.getMonth()+1}/${x.getDate()}`,day:['周日','周一','周二','周三','周四','周五','周六'][x.getDay()]}};
+    const pad=n=>String(n).padStart(2,'0');
+    const dateKey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+    const parseDay=d=>new Date(d+'T12:00:00');
+    const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+    const startOfWeek=d=>{const x=new Date(d);const offset=(x.getDay()+6)%7;x.setDate(x.getDate()-offset);x.setHours(12,0,0,0);return x};
+    const periodStats=(start,end)=>{const now=parseDay(today()),configuredStart=parseDay(startDate),rangeStart=start>configuredStart?start:configuredStart,actualEnd=end>now?now:end;const total=actualEnd<rangeStart?0:Math.floor((actualEnd-rangeStart)/86400000)+1;const startKey=dateKey(rangeStart),endKey=dateKey(actualEnd);const list=records.filter(r=>r.date>=startKey&&r.date<=endKey);const checked=new Set(list.map(r=>r.date)).size;const mins=list.reduce((n,r)=>n+(+(String(r.english||'').match(/\d+(?:\.\d+)?/)||[0])[0]),0);return {checked,missed:Math.max(0,total-checked),courses:list.filter(r=>r.course).length,minutes:mins,books:list.filter(r=>r.book).length,projects:list.filter(r=>r.project).length,total};};
+    let activePeriod='week';
+    const periodLabel=(start,end)=>`${start.getMonth()+1}/${start.getDate()}–${end.getMonth()+1}/${end.getDate()}`;
+    function currentStreak(){let n=0;let cursor=parseDay(today()),boundary=parseDay(startDate);while(cursor>=boundary&&records.some(r=>r.date===dateKey(cursor))){n++;cursor=addDays(cursor,-1)}return n}
+    function persist(){localStorage.setItem(KEY,JSON.stringify(records))}
+    function renderDailyGrid(now){const start=startOfWeek(now),days=Array.from({length:7},(_,i)=>addDays(start,i)).filter(d=>dateKey(d)>=startDate);const grid=document.querySelector('#dailyGrid');grid.innerHTML=days.length?days.map(d=>{const i=(d.getDay()+6)%7,key=dateKey(d),r=records.find(x=>x.date===key),checked=Boolean(r),isToday=key===today();const content=checked?[r.course,r.project,r.english,r.book].filter(Boolean).map(esc).join(' · '):'';return `<article class="daily-card ${isToday?'today':''}"><div class="daily-date"><b>${d.getMonth()+1}/${d.getDate()}</b><span>${['一','二','三','四','五','六','日'][i]}</span></div><div class="daily-status ${checked?'checked':''}"><i></i>${checked?'已打卡':'未打卡'}</div>${checked?`<p class="daily-content">${content}</p>`:'<span class="daily-empty">暂无学习记录</span>'}</article>`}).join(''):'<div class="empty">统计起始日尚未覆盖本周日期。</div>'}
+    function renderSummary(period='week'){const now=new Date();let rows=[];if(period==='week'){const thisStart=startOfWeek(now);rows=Array.from({length:8},(_,i)=>{const start=addDays(thisStart,-7*i),end=addDays(start,6);return {label:i===0?'本周 · '+periodLabel(start,end):periodLabel(start,end),start,end}})}else if(period==='month'){const year=now.getFullYear();rows=Array.from({length:12},(_,i)=>{const start=new Date(year,i,1,12),end=new Date(year,i+1,0,12);return {label:`${year} 年 ${i+1} 月`,start,end}}).reverse()}else{const year=now.getFullYear();rows=Array.from({length:5},(_,i)=>{const y=year-i;return {label:`${y} 年`,start:new Date(y,0,1,12),end:new Date(y,11,31,12)}})}rows=rows.filter(row=>dateKey(row.end)>=startDate&&row.start<=now);const body=document.querySelector('#summaryBody');body.innerHTML=rows.length?rows.map(row=>{const s=periodStats(row.start,row.end);return `<tr><td><strong>${row.label}</strong></td><td class="good">${s.checked} 天</td><td class="missed">${s.missed} 天</td><td>${s.courses}</td><td>${s.minutes} 分钟</td><td>${s.books}</td><td>${s.projects}</td></tr>`}).join(''):'<tr><td colspan="7" class="empty">统计起始日前没有可复盘的周期。</td></tr>';document.querySelector('#summaryFoot').textContent=`已按${period==='week'?'周':period==='month'?'月':'年'}汇总，共 ${rows.length} 个周期；从 ${startDate.replace(/-/g,'.')} 开始统计，未打卡天数只统计到今天。`}
+    function render(){
+      const now=new Date();document.querySelector('#weekday').textContent=`今天，${['星期日','星期一','星期二','星期三','星期四','星期五','星期六'][now.getDay()]}`;document.querySelector('#fullDate').textContent=`${now.getFullYear()} 年 ${now.getMonth()+1} 月 ${now.getDate()} 日`;
+      const mine=records.some(r=>r.date===today());document.querySelector('#todayStatus').textContent=mine?'今日已打卡':'待打卡';
+      const visibleRecords=records.filter(r=>r.date>=startDate);const tl=document.querySelector('#timeline');tl.innerHTML=visibleRecords.length?visibleRecords.sort((a,b)=>b.date.localeCompare(a.date)).map(r=>{const f=fmt(r.date),tags=[r.course&&`<span class="tag course">课程 · ${esc(r.course)}</span>`,r.project&&`<span class="tag project">项目 · ${esc(r.project)}</span>`,r.english&&`<span class="tag english">英语 · ${esc(r.english)}</span>`,r.book&&`<span class="tag book">阅读 · ${esc(r.book)}</span>`].filter(Boolean).join('');return `<article class="entry"><div class="entry-date"><b>${f.md}</b>${f.day}</div><div class="track"><div class="dot"></div></div><div class="entry-body"><div class="entry-title">${r.date===today()?'今天的进度':'学习进度已记录'}</div><div class="tags">${tags}</div>${r.note?`<div class="notes">✦ ${esc(r.note)}</div>`:''}</div></article>`}).join(''):'<div class="empty">起始日前的记录已隐藏，从统计起始日开始记录吧。</div>';
+      const weekStart=startOfWeek(now),weekEnd=addDays(weekStart,6),week=periodStats(weekStart,weekEnd);document.querySelector('#weekRow').innerHTML=Array.from({length:7},(_,i)=>{const key=dateKey(addDays(weekStart,i)),done=key>=startDate&&records.some(r=>r.date===key);return `<div class="day ${done?'done':''}">${['一','二','三','四','五','六','日'][i]}<i>${done?'✓':'·'}</i></div>`}).join('');document.querySelector('#streakNum').textContent=currentStreak();document.querySelector('#courseCount').textContent=week.courses;document.querySelector('#englishMins').innerHTML=`${week.minutes} <small>分钟</small>`;document.querySelector('#bookCount').textContent=week.books;document.querySelector('#sideDays').textContent=week.checked;document.querySelector('#sideProgress').style.width=Math.min(100,week.checked/5*100)+'%';const startInput=document.querySelector('#startDate');if(document.activeElement!==startInput)startInput.value=startDate;startInput.max=today();document.querySelector('#startDateHint').textContent=`从 ${startDate.replace(/-/g,'.')} 开始计入`;renderDailyGrid(now);renderSummary(activePeriod);
+    }
+    const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+    function addRecord(input){if(!input.course&&!input.project&&!input.english&&!input.book)throw new Error('至少填写一项学习内容');const r={id:crypto.randomUUID?crypto.randomUUID():Date.now().toString(),date:input.date||today(),course:(input.course||'').trim(),project:(input.project||'').trim(),english:(input.english||'').trim(),book:(input.book||'').trim(),note:(input.note||'').trim()};records=records.filter(x=>x.date!==r.date);records.push(r);persist();render();return r}
+    document.querySelector('#checkinForm').addEventListener('submit',e=>{e.preventDefault();const data=Object.fromEntries(new FormData(e.target));try{addRecord(data);e.target.reset();const t=document.querySelector('#toast');t.textContent='打卡成功，今天也很棒！';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}catch(err){const t=document.querySelector('#toast');t.textContent=err.message;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}});
+    document.querySelectorAll('[data-min]').forEach(b=>b.addEventListener('click',()=>document.querySelector('#english').value=`英语练习 ${b.dataset.min} 分钟`));
+    document.querySelectorAll('[data-period]').forEach(b=>b.addEventListener('click',()=>{activePeriod=b.dataset.period;document.querySelectorAll('[data-period]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-selected',x===b?'true':'false')});renderSummary(activePeriod)}));
+    document.querySelector('#startDate').addEventListener('change',e=>{if(!e.target.value)return;startDate=e.target.value;localStorage.setItem(START_KEY,startDate);render();const t=document.querySelector('#toast');t.textContent=`已从 ${startDate.replace(/-/g,'.')} 开始统计`;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)});
+    window.addEventListener('storage',e=>{if(e.key===KEY||e.key===START_KEY){try{if(e.key===KEY)records=JSON.parse(e.newValue||'[]');else if(e.newValue)startDate=e.newValue;render()}catch(err){console.debug('Invalid study data',err)}}});
+    document.querySelector('#clearBtn').addEventListener('click',()=>{if(confirm('确定清除你保存的打卡记录吗？')){records=[];persist();render()}});
+    if(document.modelContext?.registerTool){try{document.modelContext.registerTool({name:'create_study_checkin',title:'创建学习打卡',description:'记录一天的课程、项目成就、英语、阅读和学习收获，并更新页面统计。',inputSchema:{type:'object',properties:{date:{type:'string',description:'YYYY-MM-DD，省略则为今天'},course:{type:'string'},project:{type:'string'},english:{type:'string'},book:{type:'string'},note:{type:'string'}},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute:async input=>{const r=addRecord(input||{});return {saved:true,date:r.date,recordId:r.id}}})}catch(e){console.debug('WebMCP unavailable',e)}}
+    render();
+  </script>
+</body>
+</html>

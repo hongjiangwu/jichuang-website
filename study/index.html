@@ -50,6 +50,71 @@
     @media(max-width:900px){.mobile-nav{display:flex;gap:7px;overflow-x:auto;padding:3px 2px 10px;margin:-10px 0 20px;scrollbar-width:none}.mobile-nav::-webkit-scrollbar{display:none}.mobile-nav a{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--muted);font-size:13px;font-weight:800;text-decoration:none}.mobile-nav a.active{background:var(--navy);border-color:var(--navy);color:#fff}.checkin .panel-head{gap:14px}.field input,.field textarea{min-height:30px}.submit{min-height:52px}}
     @media(max-width:580px){.main{padding:16px 12px 34px}.mobile-brand{margin-bottom:21px}.mobile-nav{margin:-7px 0 17px}.mobile-nav a{padding:10px 12px}.topbar{margin-bottom:21px}.greeting small{font-size:13px}.greeting h1{font-size:23px;letter-spacing:-.02em;max-width:270px}.panel{border-radius:18px}.panel h2{font-size:20px}.checkin,.history,.daily-board,.review{padding:19px}.checkin .panel-head{margin-bottom:18px}.record-count{font-size:12px;padding:7px 9px}.input-grid{gap:11px}.field{padding:13px 14px;border-radius:14px}.field label{font-size:13px}.field input,.field textarea{font-size:16px;min-height:34px}.field textarea{height:72px}.quick-row{gap:6px}.quick{padding:8px 10px}.submit{margin-top:15px;border-radius:14px}.streak{padding:21px}.streak .big{font-size:42px;margin:11px 0 3px}.flame{font-size:32px}.week{margin-top:18px;gap:4px}.day i{width:26px;height:26px}.quote{padding:18px 20px}.quote p{font-size:16px}.stats{gap:10px}.stat{padding:15px 17px;gap:13px}.stat-icon{width:42px;height:42px;border-radius:13px;font-size:20px}.stat b{font-size:22px}.daily-board,.review{grid-column:auto}.daily-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.daily-card{min-height:132px;padding:12px 11px;border-radius:14px}.daily-date b{font-size:14px}.daily-content{font-size:12px}.review-head{display:block}.start-date-control{margin:15px 0 0;justify-content:space-between}.start-date-control input{padding:9px 8px;min-height:40px}.period-tabs{margin-top:15px;width:max-content}.period-tab{padding:9px 12px}.table-wrap{border-radius:12px;-webkit-overflow-scrolling:touch}.summary-table{min-width:680px}.summary-table th,.summary-table td{padding:12px 13px}.history-head{gap:10px;align-items:flex-start}.ghost{padding:9px 10px;font-size:12px}.entry{grid-template-columns:52px 16px 1fr;gap:8px;min-height:80px}.entry-date{font-size:11px}.entry-date b{font-size:12px}.dot{width:16px;height:16px;border-width:4px}.track:after{left:7px}.entry-title{font-size:14px;margin-bottom:6px}.tag{font-size:11px;padding:5px 7px}.notes{font-size:12px}.toast{right:12px;left:12px;bottom:12px;text-align:center}}
   </style>
+  <style>
+    .mobile-brand-name,.mobile-date,.mobile-summary-cards{display:none}
+    .summary-mobile-card{border:1px solid var(--line);background:#fafbfe;border-radius:14px;padding:14px}
+    .summary-mobile-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .summary-mobile-top strong{font-size:15px;color:var(--ink)}
+    .summary-mobile-status{color:var(--green);font-size:12px;font-weight:800;white-space:nowrap}
+    .summary-mobile-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:12px}
+    .summary-mobile-metrics span{display:grid;gap:2px;padding:8px 4px;background:#fff;border-radius:10px;text-align:center}
+    .summary-mobile-metrics b{font-size:17px;line-height:1.1}
+    .summary-mobile-metrics small{color:var(--muted);font-size:12px;white-space:nowrap}
+    @media(max-width:580px){
+      html,body{overflow-x:hidden}
+      .app{min-height:100dvh}
+      .main{padding:14px 12px calc(92px + env(safe-area-inset-bottom))}
+      .mobile-brand{display:flex;align-items:center;gap:10px;min-height:42px;margin:0 0 14px}
+      .mobile-brand-name{display:inline;font-size:18px;letter-spacing:-.02em}
+      .mobile-date{display:block;margin-left:auto;padding:7px 10px;background:#fff;border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:12px;font-weight:800;white-space:nowrap}
+      .mobile-nav{position:fixed;left:10px;right:10px;bottom:calc(8px + env(safe-area-inset-bottom));z-index:30;display:flex;gap:4px;overflow:visible;margin:0;padding:6px 6px calc(6px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border:1px solid rgba(218,223,234,.95);border-radius:18px;box-shadow:0 12px 28px rgba(20,31,55,.16);backdrop-filter:blur(16px)}
+      .mobile-nav a{flex:1;justify-content:center;min-height:42px;padding:8px 5px;border:0;border-radius:12px;gap:4px;font-size:13px}
+      .mobile-nav a span{font-size:16px;line-height:1}
+      .topbar{margin-bottom:16px}
+      .greeting h1{font-size:23px;max-width:280px}
+      .grid{display:flex;flex-direction:column;gap:14px}
+      .checkin{order:1}.daily-board{order:2}.stats{order:3}.side-stack{order:4}.history{order:5}.review{order:6}
+      .checkin,.daily-board,.history,.review{padding:17px}
+      .panel{border-radius:17px}
+      .panel h2{font-size:20px}
+      .field{padding:13px 14px}
+      .field label{font-size:14px}
+      .submit{min-height:50px}
+      .daily-grid{display:flex;grid-template-columns:none;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;gap:10px;padding:1px 1px 5px;margin-right:-4px}
+      .daily-card{flex:0 0 min(78vw,245px);min-height:146px;scroll-snap-align:start;padding:14px}
+      .daily-date b{font-size:15px}
+      .daily-content{font-size:14px;-webkit-line-clamp:5}
+      .daily-empty{font-size:13px}
+      .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+      .stat{display:block;min-width:0;padding:13px 7px;text-align:center}
+      .stat-icon{width:34px;height:34px;margin:0 auto 8px;font-size:17px}
+      .stat b{font-size:19px;white-space:nowrap}
+      .stat b small{font-size:11px}
+      .stat span{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+      .side-stack{gap:14px}
+      .review-head{display:block}
+      .start-date-control{margin:14px 0 0;justify-content:space-between;font-size:14px}
+      .start-date-control input{min-height:42px;padding:8px;font-size:16px}
+      .period-tabs{display:grid;grid-template-columns:repeat(3,1fr);width:100%;margin-top:13px}
+      .period-tab{min-height:42px;padding:8px 10px;font-size:14px}
+      .review .table-wrap{display:none}
+      .mobile-summary-cards{display:grid;gap:10px}
+      .summary-mobile-card{padding:13px}
+      .summary-mobile-metrics b{font-size:16px}
+      .history-head{gap:10px;margin-bottom:8px}
+      .ghost{min-height:42px;padding:9px 10px;font-size:12px}
+      .entry{grid-template-columns:1fr;gap:6px;min-height:0;padding:14px 0;border-bottom:1px dashed var(--line)}
+      .entry:last-child{border-bottom:0}
+      .entry-date{display:flex;gap:8px;text-align:left;font-size:12px;padding-top:0}
+      .entry-date b{display:inline;font-size:13px}
+      .track{display:none}
+      .entry-body{padding-bottom:0;border:0}
+      .entry-title{font-size:15px;margin-bottom:7px}
+      .tag{font-size:12px;padding:6px 8px}
+      .notes{font-size:13px}
+      .toast{right:12px;left:12px;bottom:calc(86px + env(safe-area-inset-bottom));text-align:center}
+    }
+  </style>
 </head>
 <body>
   <div class="app">
@@ -59,7 +124,7 @@
       <div class="sidebar-note"><strong>本周目标</strong>坚持学习 5 天，已经完成 <span id="sideDays">4</span> 天<div class="mini-progress"><i id="sideProgress"></i></div></div>
     </aside>
     <main class="main">
-      <div class="mobile-brand brand"><span class="brand-mark">✓</span>拾光学习</div>
+      <div class="mobile-brand brand"><span class="brand-mark">✓</span><span class="mobile-brand-name">拾光学习</span><span class="mobile-date" id="mobileDate"></span></div>
       <nav class="mobile-nav" aria-label="移动端导航"><a class="active" href="#today"><span>⌂</span>今日</a><a href="#stats"><span>◫</span>统计</a><a href="#daily"><span>▦</span>每日</a><a href="#review"><span>◷</span>复盘</a></nav>
       <header class="topbar"><div class="greeting"><small id="weekday">今天，星期六</small><h1>今天也向前一点点 👋</h1></div><div class="date-chip"><span>◷</span><span id="fullDate">2026 年 9 月 12 日</span></div></header>
       <div class="grid" id="today">
@@ -87,7 +152,7 @@
         </section>
         <section class="panel daily-board" id="daily" aria-labelledby="dailyTitle"><div class="panel-head"><div><span class="eyebrow">Daily status</span><h2 id="dailyTitle">每日打卡状态</h2><p class="section-copy">已打卡的日期显示具体内容，空白日期明确标记为未打卡。</p></div><span class="record-count" id="dailyRange">本周 7 天</span></div><div class="daily-grid" id="dailyGrid"></div></section>
         <section class="panel history" id="history" aria-labelledby="historyTitle"><div class="history-head"><div><span class="eyebrow">Recent</span><h2 id="historyTitle">最近打卡</h2></div><button class="ghost" type="button" id="clearBtn">清除我的记录</button></div><div class="timeline" id="timeline"></div></section>
-        <section class="panel review" id="review" aria-labelledby="reviewTitle"><div class="review-head"><div><span class="eyebrow">Review</span><h2 id="reviewTitle">学习复盘汇总</h2><p class="section-copy">按周、月、年查看完成情况，复盘自己的节奏。</p></div><div><label class="start-date-control" for="startDate">统计起始日 <input id="startDate" type="date" aria-describedby="startDateHint" /></label><small class="start-date-hint" id="startDateHint">只统计这一天及之后的记录</small></div><div class="period-tabs" role="tablist" aria-label="汇总周期"><button class="period-tab active" type="button" data-period="week" role="tab" aria-selected="true">周</button><button class="period-tab" type="button" data-period="month" role="tab" aria-selected="false">月</button><button class="period-tab" type="button" data-period="year" role="tab" aria-selected="false">年</button></div></div><div class="table-wrap"><table class="summary-table"><thead><tr><th>复盘周期</th><th>已打卡</th><th>未打卡</th><th>课程章节</th><th>英语练习</th><th>阅读记录</th><th>项目成就</th></tr></thead><tbody id="summaryBody"></tbody></table></div><p class="summary-foot" id="summaryFoot"></p></section>
+        <section class="panel review" id="review" aria-labelledby="reviewTitle"><div class="review-head"><div><span class="eyebrow">Review</span><h2 id="reviewTitle">学习复盘汇总</h2><p class="section-copy">按周、月、年查看完成情况，复盘自己的节奏。</p></div><div><label class="start-date-control" for="startDate">统计起始日 <input id="startDate" type="date" aria-describedby="startDateHint" /></label><small class="start-date-hint" id="startDateHint">只统计这一天及之后的记录</small></div><div class="period-tabs" role="tablist" aria-label="汇总周期"><button class="period-tab active" type="button" data-period="week" role="tab" aria-selected="true">周</button><button class="period-tab" type="button" data-period="month" role="tab" aria-selected="false">月</button><button class="period-tab" type="button" data-period="year" role="tab" aria-selected="false">年</button></div></div><div class="table-wrap"><table class="summary-table"><thead><tr><th>复盘周期</th><th>已打卡</th><th>未打卡</th><th>课程章节</th><th>英语练习</th><th>阅读记录</th><th>项目成就</th></tr></thead><tbody id="summaryBody"></tbody></table></div><div class="mobile-summary-cards" id="mobileSummaryCards" aria-label="移动端复盘汇总"></div><p class="summary-foot" id="summaryFoot"></p></section>
       </div>
     </main>
   </div>
@@ -122,17 +187,19 @@
     function persist(){localStorage.setItem(KEY,JSON.stringify(records))}
     function renderDailyGrid(now){const start=startOfWeek(now),days=Array.from({length:7},(_,i)=>addDays(start,i)).filter(d=>dateKey(d)>=startDate);const grid=document.querySelector('#dailyGrid');grid.innerHTML=days.length?days.map(d=>{const i=(d.getDay()+6)%7,key=dateKey(d),r=records.find(x=>x.date===key&&hasStudyContent(x)),checked=Boolean(r),isToday=key===today();const content=checked?[r.course,r.project,r.english,r.book].filter(Boolean).map(esc).join(' · '):'';return `<article class="daily-card ${isToday?'today':''}"><div class="daily-date"><b>${d.getMonth()+1}/${d.getDate()}</b><span>${['一','二','三','四','五','六','日'][i]}</span></div><div class="daily-status ${checked?'checked':''}"><i></i>${checked?'已打卡':'未打卡'}</div>${checked?`<p class="daily-content">${content}</p>`:'<span class="daily-empty">暂无学习记录</span>'}</article>`}).join(''):'<div class="empty">统计起始日尚未覆盖本周日期。</div>'}
     function renderSummary(period='week'){const now=new Date();let rows=[];if(period==='week'){const thisStart=startOfWeek(now);rows=Array.from({length:8},(_,i)=>{const start=addDays(thisStart,-7*i),end=addDays(start,6);return {label:i===0?'本周 · '+periodLabel(start,end):periodLabel(start,end),start,end}})}else if(period==='month'){const year=now.getFullYear();rows=Array.from({length:12},(_,i)=>{const start=new Date(year,i,1,12),end=new Date(year,i+1,0,12);return {label:`${year} 年 ${i+1} 月`,start,end}}).reverse()}else{const year=now.getFullYear();rows=Array.from({length:5},(_,i)=>{const y=year-i;return {label:`${y} 年`,start:new Date(y,0,1,12),end:new Date(y,11,31,12)}})}rows=rows.filter(row=>dateKey(row.end)>=startDate&&row.start<=now);const body=document.querySelector('#summaryBody');body.innerHTML=rows.length?rows.map(row=>{const s=periodStats(row.start,row.end);return `<tr><td><strong>${row.label}</strong></td><td class="good">${s.checked} 天</td><td class="missed">${s.missed} 天</td><td>${s.courses}</td><td>${s.minutes} 分钟</td><td>${s.books}</td><td>${s.projects}</td></tr>`}).join(''):'<tr><td colspan="7" class="empty">统计起始日前没有可复盘的周期。</td></tr>';document.querySelector('#summaryFoot').textContent=`已按${period==='week'?'周':period==='month'?'月':'年'}汇总，共 ${rows.length} 个周期；从 ${startDate.replace(/-/g,'.')} 开始统计，未打卡天数只统计到今天。`}
+    function renderMobileSummary(period='week'){const mobile=document.querySelector('#mobileSummaryCards');if(!mobile)return;const now=new Date();let rows=[];if(period==='week'){const thisStart=startOfWeek(now);rows=Array.from({length:8},(_,i)=>{const start=addDays(thisStart,-7*i),end=addDays(start,6);return {label:i===0?'本周 · '+periodLabel(start,end):periodLabel(start,end),start,end}})}else if(period==='month'){const year=now.getFullYear();rows=Array.from({length:12},(_,i)=>{const start=new Date(year,i,1,12),end=new Date(year,i+1,0,12);return {label:`${year} 年 ${i+1} 月`,start,end}}).reverse()}else{const year=now.getFullYear();rows=Array.from({length:5},(_,i)=>{const y=year-i;return {label:`${y} 年`,start:new Date(y,0,1,12),end:new Date(y,11,31,12)}})}rows=rows.filter(row=>dateKey(row.end)>=startDate&&row.start<=now);mobile.innerHTML=rows.length?rows.map(row=>{const s=periodStats(row.start,row.end);return `<article class="summary-mobile-card"><div class="summary-mobile-top"><strong>${esc(row.label)}</strong><span class="summary-mobile-status">${s.checked} 天已打卡</span></div><div class="summary-mobile-metrics"><span><b class="good">${s.checked}</b><small>已打卡</small></span><span><b class="missed">${s.missed}</b><small>未打卡</small></span><span><b>${s.courses}</b><small>课程</small></span><span><b>${s.minutes}</b><small>英语分钟</small></span><span><b>${s.books}</b><small>阅读</small></span><span><b>${s.projects}</b><small>项目</small></span></div></article>`}).join(''):'<div class="empty">统计起始日前没有可复盘的周期。</div>'}
     function render(){
-      const now=new Date();document.querySelector('#weekday').textContent=`今天，${['星期日','星期一','星期二','星期三','星期四','星期五','星期六'][now.getDay()]}`;document.querySelector('#fullDate').textContent=`${now.getFullYear()} 年 ${now.getMonth()+1} 月 ${now.getDate()} 日`;
+      const now=new Date();document.querySelector('#weekday').textContent=`今天，${['星期日','星期一','星期二','星期三','星期四','星期五','星期六'][now.getDay()]}`;document.querySelector('#fullDate').textContent=`${now.getFullYear()} 年 ${now.getMonth()+1} 月 ${now.getDate()} 日`;const mobileDate=document.querySelector('#mobileDate');if(mobileDate)mobileDate.textContent=`${now.getMonth()+1}月${now.getDate()}日`;
       const mine=records.some(r=>r.date===today()&&hasStudyContent(r));document.querySelector('#todayStatus').textContent=mine?'今日已打卡':'待打卡';
       const visibleRecords=records.filter(r=>r.date>=startDate&&hasStudyContent(r));const tl=document.querySelector('#timeline');tl.innerHTML=visibleRecords.length?visibleRecords.sort((a,b)=>b.date.localeCompare(a.date)).map(r=>{const f=fmt(r.date),tags=[r.course&&`<span class="tag course">课程 · ${esc(r.course)}</span>`,r.project&&`<span class="tag project">项目 · ${esc(r.project)}</span>`,r.english&&`<span class="tag english">英语 · ${esc(r.english)}</span>`,r.book&&`<span class="tag book">阅读 · ${esc(r.book)}</span>`].filter(Boolean).join('');return `<article class="entry"><div class="entry-date"><b>${f.md}</b>${f.day}</div><div class="track"><div class="dot"></div></div><div class="entry-body"><div class="entry-title">${r.date===today()?'今天的进度':'学习进度已记录'}</div><div class="tags">${tags}</div>${r.note?`<div class="notes">✦ ${esc(r.note)}</div>`:''}</div></article>`}).join(''):'<div class="empty">起始日前的记录已隐藏，从统计起始日开始记录吧。</div>';
-      const weekStart=startOfWeek(now),weekEnd=addDays(weekStart,6),week=periodStats(weekStart,weekEnd);document.querySelector('#weekRow').innerHTML=Array.from({length:7},(_,i)=>{const key=dateKey(addDays(weekStart,i)),done=key>=startDate&&records.some(r=>r.date===key&&hasStudyContent(r));return `<div class="day ${done?'done':''}">${['一','二','三','四','五','六','日'][i]}<i>${done?'✓':'·'}</i></div>`}).join('');document.querySelector('#streakNum').textContent=currentStreak();document.querySelector('#courseCount').textContent=week.courses;document.querySelector('#englishMins').innerHTML=`${week.minutes} <small>分钟</small>`;document.querySelector('#bookCount').textContent=week.books;document.querySelector('#sideDays').textContent=week.checked;document.querySelector('#sideProgress').style.width=Math.min(100,week.checked/5*100)+'%';const startInput=document.querySelector('#startDate');if(document.activeElement!==startInput)startInput.value=startDate;startInput.max=today();document.querySelector('#startDateHint').textContent=`从 ${startDate.replace(/-/g,'.')} 开始计入`;renderDailyGrid(now);renderSummary(activePeriod);
+      const weekStart=startOfWeek(now),weekEnd=addDays(weekStart,6),week=periodStats(weekStart,weekEnd);document.querySelector('#weekRow').innerHTML=Array.from({length:7},(_,i)=>{const key=dateKey(addDays(weekStart,i)),done=key>=startDate&&records.some(r=>r.date===key&&hasStudyContent(r));return `<div class="day ${done?'done':''}">${['一','二','三','四','五','六','日'][i]}<i>${done?'✓':'·'}</i></div>`}).join('');document.querySelector('#streakNum').textContent=currentStreak();document.querySelector('#courseCount').textContent=week.courses;document.querySelector('#englishMins').innerHTML=`${week.minutes} <small>分钟</small>`;document.querySelector('#bookCount').textContent=week.books;document.querySelector('#sideDays').textContent=week.checked;document.querySelector('#sideProgress').style.width=Math.min(100,week.checked/5*100)+'%';const startInput=document.querySelector('#startDate');if(document.activeElement!==startInput)startInput.value=startDate;startInput.max=today();document.querySelector('#startDateHint').textContent=`从 ${startDate.replace(/-/g,'.')} 开始计入`;renderDailyGrid(now);renderSummary(activePeriod);renderMobileSummary(activePeriod);
     }
     const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
     function addRecord(input){const r={id:crypto.randomUUID?crypto.randomUUID():Date.now().toString(),date:input.date||today(),course:(input.course||'').trim(),project:(input.project||'').trim(),english:(input.english||'').trim(),book:(input.book||'').trim(),note:(input.note||'').trim()};if(!hasStudyContent(r))throw new Error('至少填写一项学习内容');records=records.filter(x=>x.date!==r.date);records.push(r);persist();render();return r}
     document.querySelector('#checkinForm').addEventListener('submit',e=>{e.preventDefault();const data=Object.fromEntries(new FormData(e.target));try{addRecord(data);e.target.reset();const t=document.querySelector('#toast');t.textContent='打卡成功，今天也很棒！';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}catch(err){const t=document.querySelector('#toast');t.textContent=err.message;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}});
     document.querySelectorAll('[data-min]').forEach(b=>b.addEventListener('click',()=>document.querySelector('#english').value=`英语练习 ${b.dataset.min} 分钟`));
-    document.querySelectorAll('[data-period]').forEach(b=>b.addEventListener('click',()=>{activePeriod=b.dataset.period;document.querySelectorAll('[data-period]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-selected',x===b?'true':'false')});renderSummary(activePeriod)}));
+    document.querySelectorAll('[data-period]').forEach(b=>b.addEventListener('click',()=>{activePeriod=b.dataset.period;document.querySelectorAll('[data-period]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-selected',x===b?'true':'false')});renderSummary(activePeriod);renderMobileSummary(activePeriod)}));
+    document.querySelectorAll('.mobile-nav a').forEach(link=>link.addEventListener('click',()=>document.querySelectorAll('.mobile-nav a').forEach(item=>item.classList.toggle('active',item===link))));
     document.querySelector('#startDate').addEventListener('change',e=>{if(!e.target.value)return;startDate=e.target.value;localStorage.setItem(START_KEY,startDate);render();const t=document.querySelector('#toast');t.textContent=`已从 ${startDate.replace(/-/g,'.')} 开始统计`;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)});
     window.addEventListener('storage',e=>{if(e.key===KEY||e.key===START_KEY){try{if(e.key===KEY)records=JSON.parse(e.newValue||'[]');else if(e.newValue)startDate=e.newValue;render()}catch(err){console.debug('Invalid study data',err)}}});
     document.querySelector('#clearBtn').addEventListener('click',()=>{if(confirm('确定清除你保存的打卡记录吗？')){records=[];persist();render()}});

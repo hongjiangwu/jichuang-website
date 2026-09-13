@@ -100,17 +100,15 @@
       localStorage.removeItem(KEY);
       localStorage.setItem(RESET_KEY,'done');
     }
-    let records=JSON.parse(localStorage.getItem(KEY)||'[]');
+    const storedRecords=JSON.parse(localStorage.getItem(KEY)||'[]');
+    let records=storedRecords.filter(r=>r&&r.id!=='project-achievement-today');
+    if(records.length!==storedRecords.length)localStorage.setItem(KEY,JSON.stringify(records));
     const hasStudyContent=r=>Boolean(r&&[r.course,r.project,r.english,r.book,r.note].some(value=>String(value||'').trim()));
     const today=()=>new Date().toLocaleDateString('en-CA');
     const START_KEY='shiguang-study-start-date-v1';
     let startDate=localStorage.getItem(START_KEY)||records.filter(hasStudyContent).map(r=>r.date).filter(Boolean).sort()[0]||today();
     if(!/^\d{4}-\d{2}-\d{2}$/.test(startDate))startDate=today();
     localStorage.setItem(START_KEY,startDate);
-    if(didReset){
-      records=[{id:'project-achievement-today',date:today(),course:'',project:'完成个人学习打卡网站搭建与发布',english:'',book:'',note:'把学习进展、英语练习、阅读记录和项目成就放到同一个打卡页面里。'}];
-      persist();
-    }
     const fmt=d=>{const x=new Date(d+'T12:00:00');return {md:`${x.getMonth()+1}/${x.getDate()}`,day:['周日','周一','周二','周三','周四','周五','周六'][x.getDay()]}};
     const pad=n=>String(n).padStart(2,'0');
     const dateKey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;

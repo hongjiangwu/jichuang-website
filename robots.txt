@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hongjiangwu.github.io/jichuang-website/sitemap.xml
+Sitemap: https://jichuangmaterials.cn/sitemap.xml

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Deployment refreshed after custom-domain activation on 2026-10-13.
 Sitemap: https://jichuangmaterials.cn/sitemap.xml

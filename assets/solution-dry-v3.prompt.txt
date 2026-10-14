@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: 16:9 website solution-section background
+Primary request: moisture-control materials laboratory scene communicating plastic drying and prevention of bubbles, visually distinct from all other categories
+Scene/backdrop: dark clean process lab with a transparent polymer film chamber
+Subject: large crystal-clear film surface with condensation droplets on one side transitioning to perfectly dry clear film on the other, beside a compact stainless desiccant drying column and moisture-analysis probe
+Style/medium: cinematic macro industrial photography blended with a believable process-lab environment
+Composition/framing: wide landscape; sweeping transparent film and droplets create a graceful curve across the upper-right; dry clarity is visually obvious; lower-left stays dark and quiet for website copy
+Lighting/mood: cool icy highlights, crisp refraction, fresh controlled atmosphere
+Color palette: deep navy, clear glass, ice blue, stainless silver
+Materials/textures: water droplets, transparent polymer film, brushed metal
+Constraints: no people, no text, no logos, no watermark; no piles of pellets; no colored resin; no fantasy graphics

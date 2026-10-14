@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: 16:9 website solution-section background
+Primary request: premium industrial color laboratory showing the idea of polymer coloring, visually very different from a pile of plastic pellets
+Scene/backdrop: dark navy modern materials lab, illuminated wall of large translucent resin color panels and neatly arranged molded color plaques
+Subject: broad red, cobalt blue, amber and white translucent polymer sheets catching light; a few injection-molded color swatches on a clean steel bench
+Style/medium: cinematic high-end industrial photography, real materials, not illustration
+Composition/framing: wide landscape; the luminous color panels form an architectural grid across the upper and right portions; keep the lower-left region darker and relatively quiet for overlaid website copy
+Lighting/mood: controlled gallery lighting, luminous color transmission, restrained premium mood
+Color palette: vivid resin colors against deep navy and graphite
+Materials/textures: translucent polymer, brushed steel, polished molded plaques
+Constraints: no people, no text, no logos, no trademarks, no watermark; no sacks; no pellet piles; realistic industrial setting

@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: 16:9 website solution-section background
+Primary request: advanced polymer performance engineering test scene, visually distinct from color materials and pellet photography
+Scene/backdrop: deep navy mechanical testing laboratory
+Subject: a matte black injection-molded structural component clamped in a tensile and impact test rig, with a curved automotive-grade polymer part and subtle strain patterns visible under technical light
+Style/medium: cinematic premium industrial photography, plausible engineering equipment, not sci-fi
+Composition/framing: wide landscape; large test rig and component occupy the upper-right and central area; strong diagonal mechanical geometry; lower-left area remains dark and calm for overlaid website copy
+Lighting/mood: sharp rim light, controlled cool highlights, confident technical mood
+Color palette: graphite black, deep navy, cool steel, restrained electric blue accent
+Materials/textures: engineered polymer ribs, carbon-like matte texture, precision metal fixtures
+Constraints: no people, no text, no logos, no screens with writing, no watermark; no plastic pellet piles; no colorful swatches

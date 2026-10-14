@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: 16:9 website solution-section background
+Primary request: circular-economy polymer manufacturing scene communicating recycled and lower-impact material solutions, visually distinct from every other category
+Scene/backdrop: sophisticated dark recycling and materials design studio
+Subject: clean streams of shredded recycled plastic flakes moving along a curved sorting conveyor toward newly formed reusable packaging shells, with a subtle loop-shaped composition and a few natural fiber composite sheets
+Style/medium: cinematic premium sustainability photography, credible industrial process, not a generic green-leaf cliché
+Composition/framing: wide landscape; curved conveyor and material transformation occupy the upper-right and center and create a visual circular flow; lower-left remains deep and uncluttered for overlaid copy
+Lighting/mood: warm directional light with refined green accents, optimistic but industrial
+Color palette: sage green, translucent recycled flakes, kraft tan, deep navy background
+Materials/textures: washed plastic flakes, recycled polymer sheet, natural fibers, matte molded packaging
+Constraints: no people, no text, no logos, no watermark; no pellet piles; no globe, leaf icon, recycling symbol, or obvious stock-photo cliché

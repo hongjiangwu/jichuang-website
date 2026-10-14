@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: 16:9 website solution-section background
+Primary request: industrial mineral filler production scene communicating cost-efficient calcium carbonate filling, completely different from laboratory and pellet imagery
+Scene/backdrop: spacious mineral processing facility with dark architectural framing
+Subject: a dramatic pale limestone boulder, flowing fine calcium carbonate powder, and a stainless-steel dosing hopper feeding a processing line
+Style/medium: cinematic high-end industrial editorial photography, realistic scale
+Composition/framing: wide landscape; large angular limestone and powder stream are the main visual in the upper-right and center; geometric hopper creates vertical contrast; lower-left remains darker and uncluttered for web copy
+Lighting/mood: soft directional shaft light through mineral dust, tactile and substantial, premium rather than dirty
+Color palette: chalk white, warm limestone, silver metal, deep navy shadows
+Materials/textures: rough stone, ultrafine mineral powder, brushed stainless steel
+Constraints: no people, no text, no logos, no watermark; no colorful pellets; no sacks; not a tabletop product shot

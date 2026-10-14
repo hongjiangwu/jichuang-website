@@ -144,7 +144,6 @@ const solutionSection = document.getElementById('solutions');
 const solutionStage = document.querySelector('.solution-stage');
 const solutionTabs = [...document.querySelectorAll('[data-solution]')];
 const solutionPanels = [...document.querySelectorAll('[data-solution-panel]')];
-const solutionTriggers = [...document.querySelectorAll('[data-trigger]')];
 const solutionCount = document.querySelector('.solution-count b');
 let activeSolution = 0;
 let stageTimer;
@@ -157,6 +156,7 @@ function activateSolution(index) {
     const active = tabIndex === next;
     tab.classList.toggle('is-active', active);
     tab.setAttribute('aria-selected', String(active));
+    tab.setAttribute('tabindex', active ? '0' : '-1');
   });
   solutionPanels.forEach((panel, panelIndex) => {
     panel.classList.toggle('is-active', panelIndex === next);
@@ -173,10 +173,20 @@ function activateSolution(index) {
 solutionTabs.forEach((tab, index) => {
   tab.setAttribute('aria-selected', String(index === 0));
   tab.addEventListener('click', () => {
-    if (!solutionSection) return;
     activateSolution(index);
-    const destination = documentTop(solutionSection) + (window.innerHeight * index) + 2;
-    window.scrollTo({ top: destination, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    if (solutionSection && !mobileLayout.matches) scrollPageTo(documentTop(solutionSection) + 2, 360);
+  });
+  tab.addEventListener('keydown', (event) => {
+    const keys = ['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft', 'Home', 'End'];
+    if (!keys.includes(event.key)) return;
+    event.preventDefault();
+    let next = index;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = solutionTabs.length - 1;
+    if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % solutionTabs.length;
+    if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + solutionTabs.length) % solutionTabs.length;
+    activateSolution(next);
+    solutionTabs[next]?.focus();
   });
 });
 
@@ -186,14 +196,6 @@ function syncSolutionAccessibility() {
 syncSolutionAccessibility();
 mobileLayout.addEventListener('change', syncSolutionAccessibility);
 
-if ('IntersectionObserver' in window && solutionTriggers.length) {
-  const solutionObserver = new IntersectionObserver((entries) => {
-    const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible && !mobileLayout.matches) activateSolution(visible.target.dataset.trigger);
-  }, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
-  solutionTriggers.forEach((trigger) => solutionObserver.observe(trigger));
-}
-
 document.querySelectorAll('a[href^="#solution-"]').forEach((link) => {
   link.addEventListener('click', (event) => {
     if (mobileLayout.matches) return;
@@ -202,9 +204,15 @@ document.querySelectorAll('a[href^="#solution-"]').forEach((link) => {
     event.preventDefault();
     const index = Number(panel.dataset.solutionPanel);
     activateSolution(index);
-    window.scrollTo({ top: documentTop(solutionSection) + window.innerHeight * index + 2, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    replaceHash(link.getAttribute('href'));
+    scrollPageTo(documentTop(solutionSection) + 2);
   });
 });
+
+if (!mobileLayout.matches && window.location.hash.startsWith('#solution-')) {
+  const initialPanel = document.querySelector(window.location.hash);
+  if (initialPanel?.matches('[data-solution-panel]')) activateSolution(initialPanel.dataset.solutionPanel);
+}
 
 function openTargetProduct(hash) {
   if (!hash || !hash.startsWith('#product-')) return;

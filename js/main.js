@@ -144,6 +144,7 @@ const solutionSection = document.getElementById('solutions');
 const solutionStage = document.querySelector('.solution-stage');
 const solutionTabs = [...document.querySelectorAll('[data-solution]')];
 const solutionPanels = [...document.querySelectorAll('[data-solution-panel]')];
+const solutionImages = [...document.querySelectorAll('[data-solution-image]')];
 const solutionCount = document.querySelector('.solution-count b');
 let activeSolution = 0;
 let stageTimer;
@@ -162,6 +163,7 @@ function activateSolution(index) {
     panel.classList.toggle('is-active', panelIndex === next);
     panel.setAttribute('aria-hidden', String(!mobileLayout.matches && panelIndex !== next));
   });
+  solutionImages.forEach((image, imageIndex) => image.classList.toggle('is-active', imageIndex === next));
   if (solutionCount) solutionCount.textContent = String(next + 1).padStart(2, '0');
   if (solutionStage && !reduceMotion.matches) {
     solutionStage.classList.add('is-changing');

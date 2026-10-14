@@ -1,0 +1,9 @@
+Use case: product-mockup
+Asset type: corporate website solution panel background
+Primary request: premium industrial product photograph representing moisture-removal and desiccant masterbatch
+Scene/backdrop: deep navy-black stone studio surface with a subtle dark navy gradient background
+Subject: pale aqua and icy blue desiccant masterbatch pellets spilling from a brushed stainless steel scoop, with water droplets on the far-right slate while the pellet area remains dry
+Style/medium: photorealistic high-end industrial materials photography
+Composition/framing: wide 16:9 landscape, subject concentrated on the right half and lower-right, generous clean negative space on the left for white website copy
+Lighting/mood: controlled cool studio lighting, technical and reassuring
+Constraints: no text, logo, packaging, people, factory scene, or watermark; water must not touch the pellets
